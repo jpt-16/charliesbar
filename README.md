@@ -31,8 +31,9 @@ values in the markup.
 - Responsive down to 320px (the canvas was fixed-column) with a mobile nav
 - A live **open / closed** line in the hero, computed from the bar hours in
   `main.js` against `America/New_York`, plus today's row bolded in the hours table
-- Real customer quotes replacing the placeholder review cards
+- Real Google review quotes replacing the placeholder review cards
 - A Parties & Entertainment section, so every nav item lands somewhere
+- A `Good to know` section answering the questions reviewers keep raising
 - SEO: title/description, Open Graph + Twitter cards, canonical, `robots.txt`,
   `sitemap.xml`, and `BarOrPub` JSON-LD with address, phone and opening hours
 - Accessibility: skip link, focus-visible rings, labelled nav, `aria-expanded`
@@ -49,9 +50,14 @@ Two things still need real content from the owners:
 2. **Social URLs.** The Facebook / Instagram / Snapchat / Twitter links in the
    footer are marked `data-todo="set real URL"` and currently point at `#top`.
 
-The review quotes are sourced from public Tripadvisor reviews and attributed as
-such. If you'd rather run Google reviews, swap the text and change the `<cite>`
-line — don't relabel Tripadvisor quotes as Google ones.
+The three review quotes are real Google reviews, quoted with the reviewer's
+Google display name and attributed as Google reviews. The headline figure
+(4.6 across 2,385 reviews) is a point-in-time snapshot — re-check it before
+launch and whenever you refresh the quotes, since it drifts.
+
+The `Good to know` section exists because the same few things come up over and
+over in the reviews as unpleasant surprises: cash only, paid soda refills, and
+the tight lot. Saying them up front is cheaper than an apology at the till.
 
 Hours, phone, address and the cash-only policy come straight from the design
 canvas. If any of them have changed, update `index.html` **and** the matching

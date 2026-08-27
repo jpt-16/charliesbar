@@ -593,3 +593,19 @@ footer :focus-visible {
   }
   .is-revealing { opacity: 1; }
 }
+
+/* ------------------------------------------------------------- good to know */
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--line-rule);
+  border: 1px solid var(--line-rule);
+}
+.facts > div { background: var(--cream); padding: 34px; }
+.facts h3 { margin: 0 0 10px; font-size: clamp(20px, 2.4vw, 24px); color: var(--green); }
+.facts p { margin: 0; font-size: 17px; line-height: 1.7; color: var(--ink-body); }
+@media (max-width: 760px) { .facts { grid-template-columns: 1fr; } }
+
+.reviews-head .meta strong { color: var(--green-mid); font-size: 19px; }
