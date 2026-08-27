@@ -1,0 +1,61 @@
+<!--meta {
+  "title": "Contact | Charlie's Bar & Restaurant",
+  "description": "Get in touch with the management team at Charlie's Bar & Restaurant, 800 Shore Road, Somers Point, New Jersey. Phone (609) 927-3663 or info@charliesbar.com."
+} -->
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">800 Shore Road, Somers Point</div>
+      <h1>Contact</h1>
+      <p class="lede">Thank you for visiting. We look forward to hearing from all of our customers — if you have a question or a comment for the management team, the form below reaches them directly.</p>
+    </div>
+  </section>
+
+  <section class="section wrap form-layout" data-reveal>
+    <div class="form-aside">
+      <h2>Reach us directly</h2>
+      <dl class="contact-list">
+        <dt>Phone</dt>
+        <dd><a href="tel:+16099273663">(609) 927&#8209;3663</a></dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:info@charliesbar.com">info@charliesbar.com</a></dd>
+        <dt>Address</dt>
+        <dd><a href="/directions">800 Shore Road<br>Somers Point, NJ 08244</a></dd>
+      </dl>
+      <p class="aside-note">Booking a private party or ordering take out? Calling the bar is quicker than the form.</p>
+    </div>
+
+    <form class="form" method="post" action="/api/submit" data-form="contact">
+      <input type="hidden" name="form" value="contact">
+      <p class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="field-row">
+        <p class="field">
+          <label for="c-first">First name <span aria-hidden="true">*</span></label>
+          <input id="c-first" name="firstName" type="text" autocomplete="given-name" required>
+        </p>
+        <p class="field">
+          <label for="c-last">Last name <span aria-hidden="true">*</span></label>
+          <input id="c-last" name="lastName" type="text" autocomplete="family-name" required>
+        </p>
+      </div>
+      <div class="field-row">
+        <p class="field">
+          <label for="c-email">Email address <span aria-hidden="true">*</span></label>
+          <input id="c-email" name="email" type="email" autocomplete="email" required>
+        </p>
+        <p class="field">
+          <label for="c-phone">Phone number <span aria-hidden="true">*</span></label>
+          <input id="c-phone" name="phone" type="tel" autocomplete="tel" required>
+        </p>
+      </div>
+      <p class="field">
+        <label for="c-message">Please include any details here <span aria-hidden="true">*</span></label>
+        <textarea id="c-message" name="message" rows="7" required></textarea>
+      </p>
+      <p class="form-actions">
+        <button class="btn btn-solid" type="submit">Send message</button>
+        <span class="form-status" role="status" aria-live="polite"></span>
+      </p>
+    </form>
+  </section>

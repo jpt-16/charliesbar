@@ -1,0 +1,127 @@
+{
+  "lunch": {
+    "caption": "Weekly lunch specials — served 11am to 4pm",
+    "days": [
+      {
+        "day": "Monday",
+        "worker": { "name": "BBQ Short Rib", "detail": "Topped with pepper jack, on a brioche bun, with fries", "price": 13.99 },
+        "chef": { "name": "Pepperoni Pizza Smashburgers", "detail": "Served with chips", "price": 13.99 }
+      },
+      {
+        "day": "Tuesday",
+        "worker": { "name": "Sweet Thai Chili Chicken Cheesesteak", "detail": "Served with chips", "price": 12.99 },
+        "chef": { "name": "Short Rib Mac & Cheese", "detail": "", "price": 13.99 }
+      },
+      {
+        "day": "Wednesday",
+        "worker": { "name": "Lobster Roll", "detail": "Served with fries", "price": 14.99 },
+        "chef": { "name": "Conch Fritters", "detail": "Served with fries", "price": 12.99 }
+      },
+      {
+        "day": "Thursday",
+        "worker": { "name": "Seafood Potato Skins", "detail": "Served with sour cream", "price": 13.99 },
+        "chef": { "name": "Tuna BLT", "detail": "On your choice of toast, served with chips", "price": 12.99 }
+      },
+      {
+        "day": "Friday",
+        "worker": { "name": "Veal Parmesan Sandwich", "detail": "Served with fries", "price": 14.99 },
+        "chef": { "name": "Shrimp Salad Wrap", "detail": "Lettuce and tomato, served with chips", "price": 11.99 }
+      }
+    ]
+  },
+  "weeknight": [
+    {
+      "group": "To start the night",
+      "items": [
+        { "name": "Pineapple Blueberry Crush", "detail": "Tito's vodka, pineapple juice, muddled blueberries, fresh lemon and Sprite", "price": 12 },
+        { "name": "Lemon Drop Martini", "detail": "Deep Eddy lemon vodka, Cointreau, fresh lemon juice, lemon wheel", "price": 11 }
+      ]
+    },
+    {
+      "group": "Appetizers",
+      "items": [
+        { "name": "Jersey Imperial", "detail": "Fresh Jersey tomato stuffed with our famous crab imperial, baked and finished with mornay sauce", "price": 22 },
+        { "name": "Conch Fritters", "detail": "With remoulade sauce", "price": 15 }
+      ]
+    },
+    {
+      "group": "Dinner",
+      "items": [
+        { "name": "Seafood Scampi", "detail": "Shrimp, scallops and lobster sautéed in garlic, white wine, butter and lemon, over egg noodles", "price": 32 },
+        { "name": "Fish & Chips", "detail": "Beer-battered cod, fries and cole slaw", "price": 24 }
+      ]
+    },
+    {
+      "group": "Dessert",
+      "items": [
+        { "name": "Samoa Parfait", "detail": "Vanilla mousse, chocolate chips, coconut and crushed shortbread cookies", "price": 7.99 }
+      ]
+    }
+  ],
+  "weekend": [
+    {
+      "group": "To start the night",
+      "items": [
+        { "name": "Pineapple Blueberry Crush", "detail": "Tito's vodka, pineapple juice, muddled blueberries, fresh lemon and Sprite", "price": 12 },
+        { "name": "Lemon Drop Martini", "detail": "Deep Eddy lemon vodka, Cointreau, fresh lemon juice, lemon wheel", "price": 11 }
+      ]
+    },
+    {
+      "group": "Appetizers",
+      "items": [
+        { "name": "Jersey Imperial", "detail": "Fresh Jersey tomato stuffed with our famous crab imperial, baked and finished with mornay sauce", "price": 22 },
+        { "name": "Seafood Potato Skins", "detail": "Shrimp, lobster and crab in a creamy cheese sauce, with sour cream", "price": 18 }
+      ]
+    },
+    {
+      "group": "Dinner",
+      "items": [
+        { "name": "The Shore Thing Burger", "detail": "Certified Angus blend of chuck, brisket and short rib, garlic aioli, bacon, Cooper sharp, brioche bun, with fries", "price": 17 },
+        { "name": "Veal Parmesan", "detail": "Breaded veal cutlets, house marinara, melted provolone, your choice of pasta, garlic toast", "price": 25 },
+        { "name": "Sesame Crusted Salmon", "detail": "Toasted sesame crust, Asian-inspired glaze, potato and vegetable du jour", "price": 27 }
+      ]
+    },
+    {
+      "group": "Dessert",
+      "items": [
+        { "name": "Samoa Parfait", "detail": "Vanilla mousse, chocolate chips, coconut and crushed shortbread cookies", "price": 7.99 }
+      ]
+    }
+  ],
+  "breakfast": [
+    {
+      "group": "Eggs",
+      "items": [
+        { "name": "Three Eggs, any style", "detail": "All egg dishes served with white, wheat or rye toast and tater tots", "price": 8.99 },
+        { "name": "Egg & Cheese Sandwich", "detail": "On white, wheat, rye or a kaiser roll", "price": 8.99 },
+        { "name": "Cheese Omelet", "detail": "American, provolone or Swiss", "price": 9.99 },
+        { "name": "Eggs Benedict", "detail": "Poached eggs, Canadian bacon, spinach and hollandaise", "price": 12.99 },
+        { "name": "Charlie's Crabby Benedict", "detail": "Jumbo lump crab cake, poached eggs, spinach and hollandaise", "price": 14.99 }
+      ]
+    },
+    {
+      "group": "Sweet",
+      "items": [
+        { "name": "Homemade French Toast", "detail": "", "price": 9.99 }
+      ]
+    },
+    {
+      "group": "Add to any egg dish",
+      "items": [
+        { "name": "Bacon", "detail": "", "price": 1 },
+        { "name": "Canadian Ham", "detail": "", "price": 1 },
+        { "name": "Sausage", "detail": "", "price": 1 },
+        { "name": "Pork Roll", "detail": "", "price": 1.5 }
+      ]
+    },
+    {
+      "group": "Sides",
+      "items": [
+        { "name": "Bacon", "detail": "", "price": 3 },
+        { "name": "Canadian Ham", "detail": "", "price": 3 },
+        { "name": "Pork Roll", "detail": "", "price": 3 },
+        { "name": "Sausage", "detail": "", "price": 3 }
+      ]
+    }
+  ]
+}

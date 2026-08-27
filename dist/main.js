@@ -16,7 +16,7 @@
     });
 
     nav.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A' && window.matchMedia('(max-width: 900px)').matches) {
+      if (e.target.tagName === 'A' && window.matchMedia('(max-width: 1060px)').matches) {
         nav.setAttribute('data-open', 'false');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.textContent = 'Menu';
@@ -111,6 +111,18 @@
     });
   }
 
+  /* Keep the jump bar parked directly under the sticky header, whatever
+     height the header happens to be at this width. */
+  var header = document.querySelector('.site-header');
+  if (header && document.querySelector('.jump')) {
+    var setHeaderHeight = function () {
+      document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+    };
+    setHeaderHeight();
+    window.addEventListener('resize', setHeaderHeight);
+    if ('ResizeObserver' in window) new ResizeObserver(setHeaderHeight).observe(header);
+  }
+
   /* ------------------------------------------------------- reveal on scroll */
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var targets = document.querySelectorAll('[data-reveal]');
@@ -130,4 +142,51 @@
       io.observe(el);
     });
   }
+})();
+
+/* Form submission — posts without a page reload, and says something useful when
+   the mail relay isn't configured yet rather than pretending it worked. */
+(function () {
+  'use strict';
+
+  document.querySelectorAll('form[data-form]').forEach(function (form) {
+    var status = form.querySelector('.form-status');
+    var button = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      var label = button ? button.textContent : '';
+      if (button) { button.disabled = true; button.textContent = 'Sending…'; }
+      if (status) { status.textContent = ''; status.removeAttribute('data-state'); }
+
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function (res) {
+          return res.json().catch(function () { return { ok: res.ok }; });
+        })
+        .then(function (data) {
+          if (data && data.ok) {
+            form.innerHTML = '<p class="form-sent">Thank you — that\'s come through. ' +
+              'Someone will be in touch shortly.</p>';
+            form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+          var err = new Error((data && data.error) || 'Something went wrong.');
+          err.fromServer = true;
+          throw err;
+        })
+        .catch(function (err) {
+          if (status) {
+            /* Server messages are written for the visitor. A network failure
+               surfaces as "Failed to fetch", which isn't. */
+            var msg = err.fromServer ? err.message : 'We couldn\'t send that just now.';
+            if (msg.indexOf('927-3663') === -1) msg += ' Please call us on (609) 927-3663.';
+            status.textContent = msg;
+            status.setAttribute('data-state', 'error');
+          }
+          if (button) { button.disabled = false; button.textContent = label; }
+        });
+    });
+  });
 })();

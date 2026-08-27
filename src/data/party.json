@@ -1,0 +1,86 @@
+{
+  "cold": {
+    "group": "Cold appetizers & salads — each serves 25",
+    "items": [
+      { "name": "Vegetable Crudité", "detail": "", "price": 90 },
+      { "name": "Fruit, Pepperoni & Cheese Tray", "detail": "", "price": 95 },
+      { "name": "Antipasta", "detail": "Mixed greens, artichoke hearts, bruschetta bread, salami, mortadella, prosciutto, gouda, pecorino, mozzarella and olives", "price": 95 },
+      { "name": "Creamy Caesar Salad", "detail": "", "price": 115 },
+      { "name": "Garden Salad", "detail": "", "price": 125 },
+      { "name": "Jumbo Succulent Shrimp Cocktail", "detail": "Market price", "price": null }
+    ]
+  },
+  "hot": {
+    "group": "Hot appetizers — priced per 100 pieces",
+    "items": [
+      { "name": "Baked Mushroom Caps", "detail": "Stuffed with sausage", "price": 100 },
+      { "name": "Crostini Trio", "detail": "", "price": 115 },
+      { "name": "Calamari", "detail": "Fried or sautéed", "price": 125 },
+      { "name": "Charlie's World Famous Wings", "detail": "With Tail Gun sauce, blue cheese and celery", "price": 150 },
+      { "name": "Mexican Shrimp Poppers", "detail": "", "price": 150 },
+      { "name": "Chicken Skewers", "detail": "", "price": 150 },
+      { "name": "Beef Skewers", "detail": "", "price": 165 },
+      { "name": "Boneless Breast Tenders (BBT's)", "detail": "", "price": 175 },
+      { "name": "BBQ Shrimp", "detail": "", "price": 175 },
+      { "name": "Stuffed Mushrooms", "detail": "With crab imperial", "price": 200 },
+      { "name": "Seafood Skewers", "detail": "", "price": 205 },
+      { "name": "Scallops Wrapped in Bacon", "detail": "", "price": 225 },
+      { "name": "Mini Crab Cakes", "detail": "Fried or broiled", "price": 250 }
+    ]
+  },
+  "plated": [
+    {
+      "group": "Three-course dinner — $36.99 per person",
+      "items": [
+        { "name": "First course, choose one", "detail": "Manhattan clam chowder · she-crab soup · chicken tortellini soup · California, wedge or Caesar salad" },
+        { "name": "Entrée, choose three for the table", "detail": "Seafood pescatore · scallops · T-bone steak · lobster imperial · jumbo lump crab cake · chicken and shrimp Roma · filet mignon" },
+        { "name": "Dessert, choose two", "detail": "Peanut butter pie · Oreo cookies and cream pie · chocolate mousse" },
+        { "name": "Included", "detail": "Coffee, hot tea or iced tea" }
+      ]
+    },
+    {
+      "group": "At the bar",
+      "items": [
+        { "name": "Tab bar", "detail": "Charged per drink. You can set a monetary or time limit." },
+        { "name": "Cash bar", "detail": "Guests are charged per drink at the time of service." },
+        { "name": "Coffee or tea, regular or decaf", "detail": "Per person", "price": 1.5 }
+      ]
+    },
+    {
+      "group": "Cakes & desserts",
+      "items": [
+        { "name": "From the kitchen", "detail": "Peanut butter pie, Oreo cookies and cream pie, chocolate mousse, cannolis and cupcakes" },
+        { "name": "Specialty cakes", "detail": "Available in a variety of sizes — just ask" }
+      ]
+    }
+  ],
+  "buffets": [
+    {
+      "name": "Buffet dinner",
+      "price": 25.99,
+      "minimum": "Minimum 30 people",
+      "choices": [
+        { "label": "Salad, select one", "options": ["House salad with your choice of dressing", "Caesar"] },
+        { "label": "Entrée, select two", "options": ["Pasta alla vodka", "Sausage and meatballs", "Pork loin", "Roasted turkey", "Grilled sirloin", "Tilapia or flounder", "Ravioli, meat or cheese"] }
+      ]
+    },
+    {
+      "name": "Buffet dinner",
+      "price": 31.99,
+      "minimum": "Minimum 30 people",
+      "choices": [
+        { "label": "Salad, select one", "options": ["House salad", "Caesar"] },
+        { "label": "Entrée, select two", "options": ["Chicken Marsala", "Prime rib", "Chicken Francaise", "Pasta alla vodka with beef or chicken", "Fish du jour, blackened, broiled or grilled", "Chicken parmesan or piccata"] }
+      ]
+    },
+    {
+      "name": "Buffet dinner",
+      "price": 36.99,
+      "minimum": "Minimum 30 people",
+      "choices": [
+        { "label": "Salad, select one", "options": ["House salad", "Caesar"] },
+        { "label": "Entrée, select three", "options": ["Pasta alla vodka with shrimp, crabmeat or scallops", "Chicken and shrimp Roma", "Salmon Oscar", "Shrimp imperial", "Chicken Oscar", "Tortellini rosa with lobster", "Flounder imperial", "Petite filet mignon", "Ravioli, meat or cheese"] }
+      ]
+    }
+  ]
+}

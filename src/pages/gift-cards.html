@@ -1,0 +1,87 @@
+<!--meta {
+  "title": "Gift Cards — Charlie's Bucks | Charlie's Bar & Restaurant",
+  "description": "Charlie's Bucks gift cards in $5, $10, $20, $50 and $100 amounts. Request online or pick them up at the bar in Somers Point, NJ."
+} -->
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Charlie's Bucks</div>
+      <h1>Gift cards</h1>
+      <p class="lede">The gift you can be sure they'll enjoy. Available in $5, $10, $20, $50 and $100 amounts, in any combination you like.</p>
+      <p class="head-note">Pick them up at the bar any day of the week, or request them below and we'll post them out.</p>
+    </div>
+  </section>
+
+  <section class="section wrap form-layout" data-reveal>
+    <div class="form-aside">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li>Tell us the total and how you'd like it broken down.</li>
+        <li>Post a check made payable to <strong>Charlie's Inc.</strong> to 800 Shore Road, Somers Point, NJ 08244.</li>
+        <li>We ship the next day once the check arrives.</li>
+      </ol>
+      <p class="aside-note">Charlie's accepts cash and checks only — no credit cards, in the bar or by post. Prefer to skip the post? Fill this in, then come by and collect them.</p>
+    </div>
+
+    <form class="form" method="post" action="/api/submit" data-form="gift-cards">
+      <input type="hidden" name="form" value="gift-cards">
+      <p class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="field-row">
+        <p class="field">
+          <label for="g-total">Total amount of gift cards <span aria-hidden="true">*</span></label>
+          <input id="g-total" name="total" type="text" inputmode="decimal" placeholder="e.g. $100" required>
+        </p>
+        <p class="field">
+          <label for="g-breakdown">Denominations you'd like</label>
+          <input id="g-breakdown" name="breakdown" type="text" placeholder="e.g. 4 × $20 and 2 × $10">
+        </p>
+      </div>
+      <div class="field-row">
+        <p class="field">
+          <label for="g-first">First name <span aria-hidden="true">*</span></label>
+          <input id="g-first" name="firstName" type="text" autocomplete="given-name" required>
+        </p>
+        <p class="field">
+          <label for="g-last">Last name <span aria-hidden="true">*</span></label>
+          <input id="g-last" name="lastName" type="text" autocomplete="family-name" required>
+        </p>
+      </div>
+      <div class="field-row">
+        <p class="field">
+          <label for="g-email">Email address <span aria-hidden="true">*</span></label>
+          <input id="g-email" name="email" type="email" autocomplete="email" required>
+        </p>
+        <p class="field">
+          <label for="g-phone">Phone number <span aria-hidden="true">*</span></label>
+          <input id="g-phone" name="phone" type="tel" autocomplete="tel" required>
+        </p>
+      </div>
+      <p class="field">
+        <label for="g-street">Street address <span aria-hidden="true">*</span></label>
+        <input id="g-street" name="street" type="text" autocomplete="street-address" required>
+      </p>
+      <p class="field">
+        <label for="g-street2">Address line 2</label>
+        <input id="g-street2" name="street2" type="text" autocomplete="address-line2">
+      </p>
+      <div class="field-row field-row--three">
+        <p class="field">
+          <label for="g-city">City <span aria-hidden="true">*</span></label>
+          <input id="g-city" name="city" type="text" autocomplete="address-level2" required>
+        </p>
+        <p class="field">
+          <label for="g-state">State <span aria-hidden="true">*</span></label>
+          <input id="g-state" name="state" type="text" autocomplete="address-level1" required>
+        </p>
+        <p class="field">
+          <label for="g-zip">Zip <span aria-hidden="true">*</span></label>
+          <input id="g-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" required>
+        </p>
+      </div>
+      <p class="form-actions">
+        <button class="btn btn-solid" type="submit">Request gift cards</button>
+        <span class="form-status" role="status" aria-live="polite"></span>
+      </p>
+    </form>
+  </section>
