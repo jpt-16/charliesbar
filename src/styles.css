@@ -18,7 +18,7 @@
   --ink:         #20281f;
   --ink-body:    #4b5147;
   --ink-muted:   #5c6459;
-  --ink-faint:   #7d8477;
+  --ink-faint:   #686f62;   /* 4.98:1 on cream, 4.64:1 on sand — WCAG AA */
 
   /* Lines */
   --line:        #e2e0d4;
@@ -60,6 +60,16 @@ img { max-width: 100%; }
 
 a { color: var(--green-mid); text-decoration: none; }
 a:hover { color: var(--green); }
+
+/* A link sitting inside a block of text has to be distinguishable without
+   colour — green on grey can't reach 3:1, so underline it. */
+main p a:not(.btn):not(.more),
+.prose a,
+.contact-list a,
+.footer-contact a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 h1, h2, h3 { font-weight: 400; letter-spacing: -0.015em; }
 
@@ -850,7 +860,7 @@ footer :focus-visible {
 
 /* ------------------------------------------------------------------ listing */
 
-.listing h3 {
+.listing h2 {
   margin: 0 0 24px;
   font-size: 14px;
   letter-spacing: .22em;
@@ -1331,4 +1341,38 @@ footer :focus-visible {
   width: 100%;
   height: clamp(260px, 40vw, 520px);
   object-fit: cover;
+}
+
+.section-h2 {
+  margin: 0 0 clamp(28px, 3.5vw, 40px);
+  font-size: clamp(28px, 4vw, 40px);
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--green-mid);
+}
+
+/* The scrollable menu table is keyboard focusable, so it needs a focus ring. */
+.table-scroll:focus-visible {
+  outline: 2px solid var(--green-mid);
+  outline-offset: 4px;
+}
+
+.form-privacy {
+  margin: 4px 0 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-soft);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-faint);
+}
+
+.prose h2 {
+  margin: 2em 0 .6em;
+  font-size: clamp(23px, 2.8vw, 28px);
+  color: var(--green);
+}
+.prose h2:first-of-type { margin-top: 0; }
+.prose h3 {
+  margin: 1.6em 0 .4em;
+  font-size: clamp(19px, 2.2vw, 21px);
+  color: var(--green-mid);
 }

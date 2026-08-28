@@ -260,9 +260,18 @@
 
   document.addEventListener('keydown', function (e) {
     if (box.hidden) return;
-    if (e.key === 'Escape') close();
-    else if (e.key === 'ArrowLeft') show(index - 1);
-    else if (e.key === 'ArrowRight') show(index + 1);
-    else if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key === 'ArrowLeft') { show(index - 1); return; }
+    if (e.key === 'ArrowRight') { show(index + 1); return; }
+    if (e.key !== 'Tab') return;
+
+    /* Keep focus inside the dialog, but cycle through its controls — parking
+       it on the close button made previous and next keyboard-unreachable. */
+    var stops = [closeBtn, prevBtn, nextBtn];
+    var at = stops.indexOf(document.activeElement);
+    var next = e.shiftKey ? at - 1 : at + 1;
+    if (at === -1) next = 0;
+    e.preventDefault();
+    stops[(next + stops.length) % stops.length].focus();
   });
 })();

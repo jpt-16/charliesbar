@@ -59,7 +59,7 @@ function utilityHtml(current) {
 }
 
 function footerNavHtml() {
-  return [['/', 'Home'], ...UTILITY, ...NAV]
+  return [['/', 'Home'], ...UTILITY, ...NAV, ['/privacy', 'Privacy']]
     .map(([href, label]) => `      <a href="${href}">${label}</a>`)
     .join('\n');
 }
@@ -82,7 +82,8 @@ function renderLunch(data) {
           <td class="price">${money(d.chef.price)}</td>
         </tr>`).join('');
 
-  return `<div class="table-scroll">
+  /* A horizontally scrolling region needs to be reachable by keyboard. */
+  return `<div class="table-scroll" tabindex="0" role="region" aria-label="${esc(data.caption)}">
       <table class="menu-table">
         <caption>${esc(data.caption)}</caption>
         <thead>
@@ -112,7 +113,7 @@ ${g.items.map((i) => `        <div class="dish-row">
 
 function renderColumns(title, items, cls = '') {
   return `<div class="listing ${cls}">
-      <h3>${esc(title)}</h3>
+      <h2>${esc(title)}</h2>
       <ul class="cols">
 ${items.map((i) => `        <li>${typeof i === 'string' ? esc(i) : `<b>${esc(i.name)}</b>${i.detail ? ` <span>${esc(i.detail)}</span>` : ''}${i.abv ? ` <em>${esc(i.abv)}</em>` : ''}`}</li>`).join('\n')}
       </ul>

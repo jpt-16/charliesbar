@@ -122,6 +122,41 @@ historical shots.
 The three review quotes are real Google reviews, quoted with the reviewer's
 display name and attributed as such.
 
+## Accessibility
+
+Audited with axe-core against WCAG 2.1 A and AA across all 13 pages at 1280px
+and 390px: **no violations**. On top of what axe can check automatically:
+
+- Colour contrast is computed, not eyeballed. `--ink-faint` was 3.44:1 on sand
+  and failed AA; it is now `#686f62`, which clears 4.5:1 on both backgrounds.
+- Links inside body text are underlined, since green on grey can't reach the
+  3:1 required to distinguish them by colour alone.
+- The gallery lightbox is a proper `role="dialog"` with `aria-modal`, cycles
+  focus through its own controls (previous, next, close) in both directions, is
+  operable with arrow keys and Escape, and returns focus to the photograph you
+  opened.
+- The horizontally scrolling menu table is keyboard focusable, with a focus ring.
+- Reflows at 320px and at 200% zoom without horizontal scrolling.
+- Heading levels never skip; every page has exactly one `h1`.
+- Skip link is the first tab stop.
+
+`npm run build` does not run these checks — re-run the audit after layout
+changes. Two things automated tooling can't judge, worth a human pass before
+launch: whether the photo captions describe what actually matters in each image,
+and whether the site works with a real screen reader.
+
+## Privacy
+
+`/privacy` covers the three forms and is linked from the footer and from each
+form. It is written to match what the site actually does — no analytics, no
+cookies, no tracking, no database, submissions relayed to email. **If you add
+analytics, a booking widget, a pixel, or anything that sets a cookie, the policy
+stops being accurate and needs updating.**
+
+It is not legal advice and has not been reviewed by a lawyer. If you take online
+payments later, or start collecting anything beyond these three forms, have
+someone qualified look at it.
+
 ## Deploy
 
 Vercel, from this repo. `vercel.json` sets the build command and output
