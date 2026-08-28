@@ -145,6 +145,16 @@
       el.classList.add('is-revealing');
       io.observe(el);
     });
+
+    /* The reveal is decoration. If the observer never fires for any reason —
+       an unreachable threshold, an old browser, a viewport we didn't think of —
+       content must not stay hidden. Show everything after three seconds
+       regardless. */
+    window.setTimeout(function () {
+      document.querySelectorAll('.is-revealing').forEach(function (el) {
+        el.classList.remove('is-revealing');
+      });
+    }, 3000);
   }
 })();
 
