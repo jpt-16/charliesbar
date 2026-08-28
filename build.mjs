@@ -119,6 +119,50 @@ ${items.map((i) => `        <li>${typeof i === 'string' ? esc(i) : `<b>${esc(i.n
     </div>`;
 }
 
+function renderFood(data) {
+  const sections = data.sections.map((sec) => `<section class="food-section" id="food-${esc(sec.id)}">
+      <h3>${esc(sec.title)}</h3>
+      <dl class="dishes">
+${sec.items.map((i) => {
+    const price = i.price != null
+      ? `<span class="dots" aria-hidden="true"></span><b>${money(i.price)}</b>`
+      : '';
+    const variants = i.variants
+      ? `<dd class="variants">${i.variants.map((v) =>
+          `<span><i>${esc(v.label)}</i><b>${money(v.price)}</b></span>`).join('')}</dd>`
+      : '';
+    return `        <div class="dish-row">
+          <dt>${esc(i.name)}${price}</dt>
+          ${i.detail ? `<dd>${esc(i.detail)}</dd>` : ''}
+          ${variants}
+        </div>`;
+  }).join('\n')}
+      </dl>
+${(sec.notes ?? []).map((n) => `      <p class="food-note"><strong>${esc(n.label)}</strong> ${esc(n.text)}</p>`).join('\n')}
+    </section>`).join('\n    ');
+
+  return `<div class="food">
+    ${sections}
+  </div>`;
+}
+
+function renderFoodNav(data) {
+  return `<div class="wrap">
+${data.sections.map((s) => `      <a href="#food-${esc(s.id)}">${esc(s.title)}</a>`).join('\n')}
+    </div>`;
+}
+
+function renderGallery(data) {
+  return data.groups.map((g) => `<section class="gallery-group">
+      <h2>${esc(g.title)}</h2>
+      <div class="lightbox-grid">
+${g.photos.map((ph) => `        <button type="button" class="shot" data-full="/assets/photos/gallery/full/${esc(ph.slug)}.jpg" data-caption="${esc(ph.caption)}">
+          <img src="/assets/photos/gallery/thumb/${esc(ph.slug)}.jpg" alt="${esc(ph.caption)}" loading="lazy" decoding="async">
+        </button>`).join('\n')}
+      </div>
+    </section>`).join('\n    ');
+}
+
 /* ------------------------------------------------------------------- render */
 
 async function main() {
@@ -132,6 +176,11 @@ async function main() {
   }
 
   const blocks = {
+    GALLERY: renderGallery(data.gallery),
+    FOOD: renderFood(data.food),
+    FOOD_NAV: renderFoodNav(data.food),
+    FOOD_DISCLAIMERS: data.food.disclaimers
+      .map((d) => `<p class="fineprint">${esc(d)}</p>`).join('\n      '),
     LUNCH: renderLunch(data.menus.lunch),
     WEEKNIGHT: renderCourses(data.menus.weeknight),
     WEEKEND: renderCourses(data.menus.weekend),

@@ -190,3 +190,65 @@
     });
   });
 })();
+
+/* Gallery lightbox. The grid is buttons, so it works from the keyboard for
+   free; this adds the overlay, arrow keys and focus return. */
+(function () {
+  'use strict';
+
+  var box = document.getElementById('lightbox');
+  if (!box) return;
+
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.shot'));
+  if (!shots.length) return;
+
+  var img = box.querySelector('img');
+  var caption = box.querySelector('figcaption');
+  var closeBtn = box.querySelector('.lightbox-close');
+  var prevBtn = box.querySelector('.lightbox-prev');
+  var nextBtn = box.querySelector('.lightbox-next');
+  var index = 0;
+  var opener = null;
+
+  function show(i) {
+    index = (i + shots.length) % shots.length;
+    var shot = shots[index];
+    img.src = shot.getAttribute('data-full');
+    img.alt = shot.getAttribute('data-caption');
+    caption.textContent = shot.getAttribute('data-caption');
+  }
+
+  function open(i) {
+    opener = document.activeElement;
+    show(i);
+    box.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function close() {
+    box.hidden = true;
+    document.body.style.overflow = '';
+    if (opener) opener.focus();
+  }
+
+  shots.forEach(function (shot, i) {
+    shot.addEventListener('click', function () { open(i); });
+  });
+
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', function () { show(index - 1); });
+  nextBtn.addEventListener('click', function () { show(index + 1); });
+
+  box.addEventListener('click', function (e) {
+    if (e.target === box || e.target.tagName === 'FIGURE') close();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (box.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(index - 1);
+    else if (e.key === 'ArrowRight') show(index + 1);
+    else if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+  });
+})();

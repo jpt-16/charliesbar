@@ -8,11 +8,12 @@ script, plus one serverless function for the forms.
 build.mjs          assembles src/ into dist/
 src/layout.html    the shell — head, header, nav, footer, JSON-LD
 src/pages/*.html   one content fragment per page
-src/data/*.json    menus, spirits and the party menu, as structured data
+src/data/*.json    food, menus, spirits, party menu and gallery, as structured data
 src/styles.css     all styles (palette + type live in :root)
 src/main.js        mobile nav, open/closed status, forms, scroll reveal
 api/submit.js      form handler (Resend)
-assets/            logos + favicon
+assets/photos/     real photography, resized and compressed
+assets/pdf/        printable party menu and gift-card form
 ```
 
 ```sh
@@ -47,9 +48,10 @@ The old site's problems, and what replaced them:
 | Nested `<table>` layout | Semantic HTML, CSS grid and flexbox |
 | Nav labels baked into PNGs | Real text links — restyleable, searchable, readable by screen readers |
 | Menus as photographs of printed sheets | `src/data/*.json`, rendered into real tables and price lists |
-| Shop page: "coming soon" | Merch page pointing at the bar, since there's no web store |
+| Full standing menu only readable as two JPEGs | 67 dishes across 12 courses in `food.json` |
+| 48 unlabelled gallery images | 40 curated, grouped and captioned, with a keyboard-navigable lightbox |
+| Shop page: "coming soon" | Merch page built around the Top Gun artwork that was orphaned on the server |
 | Entertainment: mascot graphics only | Trivia, live music, game day, and an honest "call us for this week" |
-| 48 unlabelled gallery images | A responsive grid ready for a curated, captioned set |
 
 Also added: SEO meta and `BarOrPub` JSON-LD on every page, a generated
 `sitemap.xml`, skip links and focus rings, `prefers-reduced-motion` support, a
@@ -59,9 +61,14 @@ paid soda refills, the tight lot).
 
 ## Updating content
 
-**Menus, drinks, party menu** — edit the JSON in `src/data/` and rebuild. No
+**Food, drinks, party menu** — edit the JSON in `src/data/` and rebuild. No
 Photoshop, no re-photographing a printed sheet. Prices are numbers; `null` means
-"market price".
+"market price". `food.json` is the standing menu, `menus.json` the rotating
+specials, `spirits.json` the bar, `party.json` the catering menu.
+
+**Photographs** — `gallery.json` lists them by slug, grouped and captioned. Each
+slug needs a matching pair under `assets/photos/gallery/thumb/` (600px) and
+`full/` (1600px).
 
 **Everything else** — the page fragments in `src/pages/`. Each starts with a
 `<!--meta {...} -->` block carrying its title and meta description.
@@ -85,16 +92,30 @@ Until those exist the endpoint returns 503 and the form tells the visitor to
 ring the bar — it fails loudly rather than swallowing a job application. There's
 an off-screen honeypot field for bots and a 5MB cap on resumes.
 
+## Photography
+
+Every image is self-hosted, pulled from the old site and re-encoded — nothing
+hotlinks back to `charliesbar.com`, so the new site doesn't depend on the old
+server staying up. The 48 gallery originals came to 19MB; resized to a 600px
+thumbnail and a 1600px lightbox copy each, the whole set is 8MB.
+
+Eleven near-duplicate table spreads were held back rather than shipped
+(`dsc05287`, `dsc05384`, `dsc05391`, `dsc05399`, `dsc05415`, `dsc05418`,
+`dsc05420`, `dsc05434`, `dsc05451`, `dsc05473`, `dsc05513`). They're still on
+the old server if you want any of them back.
+
+Captions were written from the photographs themselves, but nobody here knows
+these rooms — worth a read-through by someone who does, particularly the five
+historical shots.
+
 ## Still needed before launch
 
-1. **Photographs.** Every striped tile is a placeholder — the hero pair, the
-   history photos, the merch shots, and the whole gallery. Pull the originals
-   from the old site's `/galleries/`, curate and caption a subset, then swap the
-   `.tile` divs for `<img>` tags.
-2. **Entertainment schedule.** The page currently says "call us for this week",
-   which is honest but weak. If there's a fixed trivia night, put the day on it.
-3. **Menu prices.** Transcribed from the specials boards dated Aug 2026 — verify
-   before launch, and remember specials rotate.
+1. **Merch photographs.** The Shop page runs on the Top Gun artwork; it wants
+   actual shots of the hats and tees.
+2. **Entertainment schedule.** The page says "call us for this week", which is
+   honest but weak. If trivia has a fixed night, put the day on it.
+3. **Menu prices.** Transcribed from the boards dated Aug 2026 and from the two
+   standing-menu scans — verify before launch, and remember specials rotate.
 4. **The Google rating.** 4.6 across 2,385 reviews is a point-in-time snapshot.
    Re-check it at launch and when you refresh the quotes.
 

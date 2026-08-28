@@ -1,0 +1,172 @@
+{
+  "intro": "Served all day, seven days a week. Dinners from 4pm.",
+  "sections": [
+    {
+      "id": "wings",
+      "title": "World famous wings & BBTs",
+      "items": [
+        { "name": "Wings", "variants": [
+          { "label": "Single order, 10 pieces", "price": 13.99 },
+          { "label": "Chicken Little, 30 pieces", "price": 33.99 },
+          { "label": "Rooster Jack, 50 pieces", "price": 51.99 }
+        ]},
+        { "name": "Wings & BBTs Combo", "detail": "Six wings and three BBTs", "price": 13.99 },
+        { "name": "BBTs — boneless breast tenders", "variants": [
+          { "label": "Single order, 5 pieces", "price": 12.99 },
+          { "label": "20 BBTs", "price": 30.99 },
+          { "label": "40 BBTs", "price": 51.99 }
+        ]}
+      ],
+      "notes": [
+        { "label": "Sauces", "text": "Tail Gun (mild) · Southwest (Stealth BBQ) · Stinger (tangy sweet honey garlic) · Top Gun (hell fire) — 2oz 75¢ each, pints $6" },
+        { "label": "Xtras", "text": "Homemade blue cheese, ranch, honey mustard, celery, Tail Gun, Southwest, Stinger, Top Gun" }
+      ]
+    },
+    {
+      "id": "soups",
+      "title": "Soups",
+      "items": [
+        { "name": "French Onion", "detail": "Baked crouton and provolone", "price": 7.99 },
+        { "name": "Crock O' Chili", "detail": "Monterey Jack, sour cream and a roll", "price": 7.99 },
+        { "name": "She Crab", "variants": [ { "label": "Cup", "price": 6.99 }, { "label": "Bowl", "price": 8.99 } ] },
+        { "name": "Clam Chowder", "detail": "Manhattan red or New England white", "variants": [ { "label": "Cup", "price": 5.99 }, { "label": "Bowl", "price": 7.99 } ] }
+      ]
+    },
+    {
+      "id": "salads",
+      "title": "Salads",
+      "items": [
+        { "name": "House", "detail": "Romaine and iceberg, black olives, Bermuda onions, tomatoes, cucumbers", "price": 10.99 },
+        { "name": "Wedge", "detail": "Iceberg wedge, tomatoes, hard boiled egg, bacon bits, blue cheese crumbles, sundried tomatoes, homemade blue cheese dressing", "price": 13.49 },
+        { "name": "Caesar", "price": 13.49 },
+        { "name": "Cobb", "detail": "Blue cheese crumbles, avocado, bacon bits, tomatoes, hard boiled egg, wild greens, baby spinach", "price": 13.49 },
+        { "name": "Peppers Julia", "detail": "Romaine, buffalo mozzarella, roasted yellow and red peppers, sharp provolone, Bermuda onions, black olives, balsamic glaze, oregano and parmesan", "price": 15.99 }
+      ],
+      "notes": [
+        { "label": "Dressings", "text": "Homemade blue cheese · honey mustard · Italian · ranch · Russian · oil and red wine vinegar · oil and balsamic vinegar" },
+        { "label": "Add to any salad", "text": "Grilled chicken $7 · BBTs $7 · grilled filet $8 · grilled shrimp $8 · tuna $9 · scallops $9 · jumbo lump crab meat $10" }
+      ]
+    },
+    {
+      "id": "appetizers",
+      "title": "Appetizers",
+      "items": [
+        { "name": "Fries", "detail": "Captain Jack's Old Bay fries $7.99 · Mexican fries $8.99", "price": 7.49 },
+        { "name": "Onion Rings", "price": 10.49 },
+        { "name": "Mozzarella Sticks", "detail": "With marinara", "price": 10.49 },
+        { "name": "Potato Skins", "detail": "Bacon bits, cheese sauce, Old Bay, parsley, sour cream", "price": 10.49 },
+        { "name": "Snack Basket", "detail": "Mozzarella sticks, poppers, onion rings and marinara", "price": 11.99 },
+        { "name": "Nachos", "detail": "Add chicken $7 · add chili $3", "price": 11.99 },
+        { "name": "Jamaican BBTs", "detail": "Jerk-roasted, with ranch", "price": 13.49 },
+        { "name": "Steamers", "detail": "Littleneck clams, drawn butter", "price": 13.49 },
+        { "name": "Chicken Fingers", "detail": "With fries", "price": 13.99 },
+        { "name": "Tail Swimmers", "detail": "Steamed gulf shrimp in Tail Gun sauce", "price": 14.99 },
+        { "name": "Steamed Shrimp", "detail": "Half a pound, iced or hot and spicy", "price": 14.99 },
+        { "name": "Mussels", "detail": "White wine garlic or marinara — add pasta $3.99", "price": 15.99 },
+        { "name": "Jacks Scallops", "detail": "Blackened, sautéed spinach, blue cheese crumbles, fresh strawberries in banana sauce", "price": 18.49 },
+        { "name": "Jumbo Lump Mini Crab Cake", "detail": "Broiled, sautéed spinach, Cusabi sauce", "price": 18.99 },
+        { "name": "Crabby Mac", "detail": "Elbow macaroni in cheddar cheese Alfredo, topped with toasted lump crab meat", "price": 21.99 }
+      ]
+    },
+    {
+      "id": "burgers",
+      "title": "Hot off the grill — signature burgers",
+      "items": [
+        { "name": "Cheeseburger", "detail": "American, provolone or Swiss", "price": 13.49 },
+        { "name": "The Hammer", "detail": "Blackened, blue cheese crumble, lettuce and onion rings", "price": 16.49 },
+        { "name": "Bruschetta Burger", "detail": "Tomatoes, onion, basil, sharp provolone, balsamic glaze", "price": 16.49 },
+        { "name": "The 1944", "detail": "Bacon, lettuce, tomato and your choice of cheese", "price": 16.49 },
+        { "name": "Maverick", "detail": "Bacon, Swiss, BBQ and onion rings", "price": 16.49 },
+        { "name": "Jersey Giant", "detail": "Taylor pork roll, lettuce, tomato, onion and American, provolone or Swiss", "price": 16.49 },
+        { "name": "Cheesesteak or Chicken Cheesesteak", "detail": "American or provolone", "price": 12.99 }
+      ],
+      "notes": [
+        { "label": "About the burgers", "text": "100% Angus beef, a blend of chuck, brisket and short rib. Served with chips; fries $3 · toppings 50¢ each" }
+      ]
+    },
+    {
+      "id": "favorites",
+      "title": "Local favorites",
+      "items": [
+        { "name": "Notorious P.I.G.", "detail": "Thin sliced oven roasted pork, au jus, spicy onions — with provolone $15.99", "price": 14.49 },
+        { "name": "Grilled Reuben, corned beef or turkey", "detail": "Swiss, sauerkraut, Russian dressing, rye toast", "price": 14.49 },
+        { "name": "Patty Melt", "detail": "Half-pound custom blend burger, American cheese, Russian dressing, grilled rye", "price": 14.99 },
+        { "name": "Roast Beef Cheddar Melt", "detail": "Brioche roll, creamy horseradish, cheddar jack, with fries and au jus", "price": 14.99 },
+        { "name": "Chicken Cutlet", "detail": "Grilled, roasted red peppers, provolone, sautéed spinach, on a kaiser", "price": 15.49 },
+        { "name": "Fried Flounder", "detail": "Kaiser roll, lettuce, tomato, cocktail or tartar sauce", "price": 15.49 },
+        { "name": "Philly Philly", "detail": "Roast pork, sautéed spinach and garlic, roasted red peppers, sharp provolone, long hot pepper, with fries and au jus", "price": 16.49 },
+        { "name": "Crab Cake Sandwich", "detail": "Kaiser roll, lettuce, tomato, cocktail or tartar sauce. No fillers", "price": 17.99 },
+        { "name": "Wes's Favorite", "detail": "8oz sliced filet mignon, grilled, melted provolone, lettuce, tomato, garlic buttered kaiser", "price": 18.49 }
+      ],
+      "notes": [ { "label": "Served with", "text": "Fries" } ]
+    },
+    {
+      "id": "wraps",
+      "title": "Wraps & things",
+      "items": [
+        { "name": "Buffalo Chicken Wrap", "detail": "Grilled chicken, lettuce, tomato, blue cheese, Tail Gun sauce", "price": 13.49 },
+        { "name": "Blackened Chicken Caesar Wrap", "price": 13.49 },
+        { "name": "Corned Beef, Turkey or Roast Beef Special", "detail": "Russian dressing, Swiss, cole slaw, rye bread", "price": 13.49 }
+      ],
+      "notes": [ { "label": "Served with", "text": "Chips — add fries $3" } ]
+    },
+    {
+      "id": "pasta",
+      "title": "Pasta",
+      "items": [
+        { "name": "Penne alla Vodka", "detail": "Minced prosciutto in vodka cream, basil and parmesan. Add chicken $7 · grilled filet $8 · grilled shrimp $8 · scallops $9 · jumbo lump crab meat $10", "price": 18.99 },
+        { "name": "Pasta & Clams", "detail": "Chopped clams and tender littlenecks, white wine garlic or marinara", "price": 23.99 },
+        { "name": "Crab Sauté", "detail": "Jumbo lump crab, white wine garlic or marinara", "price": 31.99 }
+      ],
+      "notes": [ { "label": "Dinners from 4pm", "text": "Your choice of penne or linguine" } ]
+    },
+    {
+      "id": "land",
+      "title": "From the land",
+      "items": [
+        { "name": "Half Rack of Ribs", "detail": "Braised five hours in a sweet citrus glaze, then fired, with homemade BBQ sauce", "price": 22.99 },
+        { "name": "Chicken Parmesan", "detail": "Marinara and provolone", "price": 24.99 },
+        { "name": "Chicken Française", "detail": "Lightly dipped, sautéed in a homemade butter sauce, over penne or linguine", "price": 24.99 },
+        { "name": "Filet Angelo", "detail": "Center cut filet mignon, grilled, topped with jumbo lump crab, tomatoes, basil, garlic and sharp provolone", "price": 33.99 },
+        { "name": "Filet Mignon", "detail": "7oz center cut — black and blue $3", "price": 34.99 }
+      ],
+      "notes": [ { "label": "Dinners from 4pm", "text": "Choose a vegetable and a potato" } ]
+    },
+    {
+      "id": "sea",
+      "title": "From the sea",
+      "items": [
+        { "name": "Deep Fried Shrimp", "price": 22.99 },
+        { "name": "Tuna", "detail": "Grilled or blackened — black and blue $3", "price": 23.99 },
+        { "name": "Tuna Provençal", "detail": "Lightly blackened, seared rare, fresh tomatoes, onions, basil, sharp provolone, balsamic glaze", "price": 26.99 },
+        { "name": "Broiled Scallops", "detail": "Seasoned bread crumbs, lemon butter sauce", "price": 30.99 },
+        { "name": "Jumbo Lump Crab Cakes", "detail": "Mixed with sautéed vegetables, broiled, with mornay sauce", "price": 30.99 },
+        { "name": "Broiled Seafood Combo", "detail": "Fish du jour, shrimp, scallops and crab meat, broiled golden brown", "price": 36.99 }
+      ],
+      "notes": [ { "label": "Dinners from 4pm", "text": "Choose a vegetable and a potato" } ]
+    },
+    {
+      "id": "kids",
+      "title": "Kid's menu",
+      "items": [
+        { "name": "Kid's Pasta", "detail": "Penne or linguine, red or butter sauce", "price": 8.99 },
+        { "name": "Hot Dog", "detail": "With fries", "price": 8.99 },
+        { "name": "Grilled Cheese", "detail": "White or wheat, with fries", "price": 8.99 },
+        { "name": "Mac & Cheese", "price": 10.99 }
+      ]
+    },
+    {
+      "id": "desserts",
+      "title": "Desserts",
+      "items": [
+        { "name": "Chocolate Mousse", "price": 5.99 },
+        { "name": "Peanut Butter Pie", "price": 7.99 },
+        { "name": "Cookies & Cream Pie", "price": 7.99 }
+      ]
+    }
+  ],
+  "disclaimers": [
+    "Prices subject to change without notice. Sorry, we accept cash only — no checks or credit cards.",
+    "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions."
+  ]
+}

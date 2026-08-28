@@ -7,19 +7,43 @@
     <div class="wrap">
       <div class="eyebrow">Serving lunch from 11am &amp; dinner from 4pm</div>
       <h1>Menus</h1>
-      <p class="lede">Specials change with the week and the season. What follows is what's on right now — the wings, the tenders and the rest of the regular menu are always on, seven days a week.</p>
+      <p class="lede">The full menu is below, and it doesn't change — wings, BBTs, burgers, seafood and the rest, seven days a week. Under it are the specials, which rotate with the week and the season.</p>
       <p class="head-note">Cash only. No checks or credit cards. There's an ATM in the front bar.</p>
     </div>
   </section>
 
   <nav class="jump" aria-label="Jump to a menu">
     <div class="wrap">
+      <a href="#full">Full menu</a>
       <a href="#lunch">Lunch specials</a>
       <a href="#weeknight">Weeknight dinner</a>
       <a href="#weekend">Weekend dinner</a>
       <a href="#breakfast">Sunday breakfast</a>
     </div>
   </nav>
+
+  <section class="section wrap" id="full" data-reveal>
+    <div class="menu-head">
+      <h2>The full menu</h2>
+      <span class="menu-when">Served seven days a week · dinners from 4pm</span>
+    </div>
+    <nav class="food-nav" aria-label="Jump to a course">
+      {{FOOD_NAV}}
+    </nav>
+    {{FOOD}}
+    <div class="food-disclaimers">
+      {{FOOD_DISCLAIMERS}}
+    </div>
+  </section>
+
+  <section class="section section--sand" data-reveal>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">And every week</div>
+        <h2>What's on right now</h2>
+      </div>
+    </div>
+  </section>
 
   <section class="section wrap" id="lunch" data-reveal>
     <div class="menu-head">
