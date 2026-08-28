@@ -22,6 +22,7 @@ const NAV = [
 ];
 
 const UTILITY = [
+  ['/', 'Home'],
   ['/about', 'About'],
   ['/employment', 'Employment'],
   ['/contact', 'Contact']
@@ -59,7 +60,7 @@ function utilityHtml(current) {
 }
 
 function footerNavHtml() {
-  return [['/', 'Home'], ...UTILITY, ...NAV, ['/privacy', 'Privacy']]
+  return [...UTILITY, ...NAV, ['/privacy', 'Privacy']]
     .map(([href, label]) => `      <a href="${href}">${label}</a>`)
     .join('\n');
 }
