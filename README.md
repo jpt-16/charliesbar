@@ -138,18 +138,18 @@ end of `src/styles.css`.
 
 ## Page head photographs
 
-Seven pages carry a photograph behind the green wash, set with `headPhoto` in
-the page's `<!--meta>` block: About, Menus, Spirits, Parties, Entertainment,
-Gallery and Directions.
+Six pages carry a photograph behind the green wash, set with `headPhoto` in
+the page's `<!--meta>` block: About, Menus, Spirits, Entertainment, Gallery and
+Directions.
 
-Contact, Employment, Gift Cards and Privacy deliberately keep the flat green.
+Parties, Contact, Employment, Gift Cards and Privacy keep the flat green.
 They are forms and fine print — a busy band above a form you want someone to
 finish is friction, and the split reads as a rule (content pages get a
 photograph, transactional ones don't) rather than an inconsistency.
 
 The wash is heavier here than on the home hero, `.80/.86` against `.70/.78`,
 because the page head's smallest text sits higher in the frame. Measured across
-all seven at 390px and 1280px: worst case 5.4:1, and `.76/.82` fails seven of
+every photo head at 390px and 1280px: worst case 5.4:1, and `.76/.82` fails seven of
 the fourteen combinations. **Re-measure after swapping a photograph** — a
 brighter image fails faster, and the daytime exterior on Directions is already
 the closest to the line.

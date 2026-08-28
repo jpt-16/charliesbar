@@ -1417,12 +1417,6 @@ footer :focus-visible {
   .lightbox-prev, .lightbox-next { font-size: 48px; padding: 0 10px; }
 }
 
-.lead-photo img {
-  display: block;
-  width: 100%;
-  height: clamp(260px, 40vw, 520px);
-  object-fit: cover;
-}
 
 .section-h2 {
   margin: 0 0 clamp(28px, 3.5vw, 40px);
