@@ -8,26 +8,27 @@
   var nav = document.getElementById('primary-nav');
 
   if (toggle && nav) {
+    var setOpen = function (open) {
+      nav.setAttribute('data-open', String(open));
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close' : 'Menu';
+      /* An open menu needs a solid header behind it, not the hero photo. */
+      document.body.classList.toggle('nav-open', open);
+    };
+
     toggle.addEventListener('click', function () {
-      var open = nav.getAttribute('data-open') === 'true';
-      nav.setAttribute('data-open', String(!open));
-      toggle.setAttribute('aria-expanded', String(!open));
-      toggle.textContent = open ? 'Menu' : 'Close';
+      setOpen(nav.getAttribute('data-open') !== 'true');
     });
 
     nav.addEventListener('click', function (e) {
       if (e.target.tagName === 'A' && window.matchMedia('(max-width: 1060px)').matches) {
-        nav.setAttribute('data-open', 'false');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = 'Menu';
+        setOpen(false);
       }
     });
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && nav.getAttribute('data-open') === 'true') {
-        nav.setAttribute('data-open', 'false');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = 'Menu';
+        setOpen(false);
         toggle.focus();
       }
     });
@@ -342,4 +343,27 @@
 
     update();
   });
+})();
+
+
+/* Header over the hero photo. Adds .header-stuck once you scroll past the
+   banner, which swaps the transparent header back to the solid bar. Remove this
+   block and the matching CSS to turn the experiment off. */
+(function headerOverHero() {
+  'use strict';
+
+  var header = document.querySelector('.site-header');
+  var banner = document.querySelector('.hero, .page-head');
+  if (!header || !banner) return;
+
+  document.body.classList.add('header-over');
+
+  function sync() {
+    var past = banner.getBoundingClientRect().bottom - header.offsetHeight;
+    document.body.classList.toggle('header-stuck', past <= 0);
+  }
+
+  sync();
+  window.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync);
 })();

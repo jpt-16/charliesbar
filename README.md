@@ -122,6 +122,17 @@ historical shots.
 The three review quotes are real Google reviews, quoted with the reviewer's
 display name and attributed as such.
 
+## The header-over-photo experiment
+
+At the top of a page the header is transparent so the banner photo runs up
+behind it, with a cream wordmark and light nav; once you scroll past the banner
+it turns into the solid cream bar. Measured worst-case header text contrast over
+the photo is 8:1, well clear of AA.
+
+**To turn it off**: delete the `header on photo` block at the end of
+`src/styles.css` and the `headerOverHero` function at the end of `src/main.js`.
+Nothing else depends on either.
+
 ## Accessibility
 
 Audited with axe-core against WCAG 2.1 A and AA across all 13 pages at 1280px
