@@ -122,16 +122,19 @@ historical shots.
 The three review quotes are real Google reviews, quoted with the reviewer's
 display name and attributed as such.
 
-## The header-over-photo experiment
+## The header photograph
 
-At the top of a page the header is transparent so the banner photo runs up
-behind it, with a cream wordmark and light nav; once you scroll past the banner
-it turns into the solid cream bar. Measured worst-case header text contrast over
-the photo is 8:1, well clear of AA.
+The masthead bar carries the exterior shot instead of flat cream, cropped to
+`center 88%` — higher up the frame puts the building's own neon "Charlie's"
+sign directly behind the wordmark, which reads as two logos fighting.
 
-**To turn it off**: delete the `header on photo` block at the end of
-`src/styles.css` and the `headerOverHero` function at the end of `src/main.js`.
-Nothing else depends on either.
+The dark wash over it is what keeps the nav legible. Measured worst-case
+contrast is 11:1 at desktop, 8.2:1 at 390px, and 6.9:1 with the mobile menu
+open (which exposes much more of the photograph). Re-measure if you change the
+wash or the crop.
+
+To revert to the plain cream bar, delete the `header photograph` block at the
+end of `src/styles.css`.
 
 ## Accessibility
 

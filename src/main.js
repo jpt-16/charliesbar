@@ -344,26 +344,3 @@
     update();
   });
 })();
-
-
-/* Header over the hero photo. Adds .header-stuck once you scroll past the
-   banner, which swaps the transparent header back to the solid bar. Remove this
-   block and the matching CSS to turn the experiment off. */
-(function headerOverHero() {
-  'use strict';
-
-  var header = document.querySelector('.site-header');
-  var banner = document.querySelector('.hero, .page-head');
-  if (!header || !banner) return;
-
-  document.body.classList.add('header-over');
-
-  function sync() {
-    var past = banner.getBoundingClientRect().bottom - header.offsetHeight;
-    document.body.classList.toggle('header-stuck', past <= 0);
-  }
-
-  sync();
-  window.addEventListener('scroll', sync, { passive: true });
-  window.addEventListener('resize', sync);
-})();

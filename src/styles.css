@@ -1458,65 +1458,39 @@ footer :focus-visible {
   color: var(--green-mid);
 }
 
+/* ========================================================= header photograph
+   The masthead bar carries the exterior shot instead of flat cream. The dark
+   wash over it is what keeps the nav readable — measured, not guessed, so
+   don't lighten it without re-checking (see README). */
 
-/* ============================================================ header on photo
-   EXPERIMENT — the exterior photo showing through the header.
-
-   At the top of the page the header is transparent so the hero photo runs up
-   behind it; once you scroll it turns into the solid cream bar. To turn this
-   off, delete this block and remove `headerOverHero` from main.js — nothing
-   else depends on it. */
-
-body.header-over .site-header {
-  background: transparent;
-  border-bottom-color: transparent;
-  transition: background .25s ease, border-color .25s ease;
+.site-header {
+  background:
+    linear-gradient(rgba(34,48,31,.78), rgba(34,48,31,.82)),
+    url("/assets/photos/site/exterior.jpg") center 88% / cover no-repeat;
+  border-bottom-color: rgba(251,250,245,.18);
 }
-body.header-over .site-header .logo img {
-  /* the green wordmark is a flat colour, so this makes it cream */
-  filter: brightness(0) invert(1);
-  transition: filter .25s ease;
-}
-body.header-over .nav a { color: var(--cream); }
-body.header-over .nav a:hover,
-body.header-over .nav a[aria-current="page"] {
+
+/* The wordmark is flat green artwork, so this turns it cream. */
+.site-header .logo img { filter: brightness(0) invert(1); }
+
+.site-header .nav a { color: var(--cream); }
+.site-header .nav a:hover,
+.site-header .nav a[aria-current="page"] {
   color: #fff;
-  border-bottom-color: rgba(251,250,245,.7);
+  border-bottom-color: rgba(251,250,245,.75);
 }
-body.header-over .nav-toggle { color: var(--cream); border-color: rgba(251,250,245,.5); }
-body.header-over .btn-solid { background: rgba(251,250,245,.16); border: 1px solid rgba(251,250,245,.5); }
-body.header-over .btn-solid:hover { background: var(--cream); color: var(--green); }
 
-/* Scrolled away from the hero — back to the solid bar. */
-body.header-over.header-stuck .site-header,
-body.header-over.nav-open .site-header {
+.site-header .nav-toggle { color: var(--cream); border-color: rgba(251,250,245,.55); }
+
+.site-header .btn-solid {
   background: var(--cream);
-  border-bottom-color: var(--line);
+  color: var(--green);
+  border: 1px solid var(--cream);
 }
-body.header-over.header-stuck .site-header .logo img,
-body.header-over.nav-open .site-header .logo img { filter: none; }
-body.header-over.header-stuck .nav a,
-body.header-over.nav-open .nav a { color: #3c4a3b; }
-body.header-over.header-stuck .nav a:hover,
-body.header-over.header-stuck .nav a[aria-current="page"],
-body.header-over.nav-open .nav a[aria-current="page"] { color: var(--green); border-bottom-color: var(--green-mid); }
-body.header-over.header-stuck .nav-toggle,
-body.header-over.nav-open .nav-toggle { color: var(--green); border-color: var(--line); }
-body.header-over.header-stuck .btn-solid,
-body.header-over.nav-open .btn-solid { background: var(--green-mid); border-color: var(--green-mid); }
-body.header-over.header-stuck .btn-solid:hover,
-body.header-over.nav-open .btn-solid:hover { background: var(--green); color: var(--cream); }
+.site-header .btn-solid:hover { background: transparent; color: var(--cream); }
 
-/* Pull the banner up so it starts underneath the header rather than below it,
-   then pad its content back down by the same amount. */
-body.header-over .hero,
-body.header-over .page-head { margin-top: calc(var(--header-h, 90px) * -1); }
-body.header-over .hero-inner { padding-top: calc(var(--header-h, 90px) + clamp(64px, 9vw, 104px)); }
-body.header-over .page-head { padding-top: calc(var(--header-h, 90px) + clamp(48px, 7vw, 84px)); }
-
-/* The mobile menu drops over the photo, so it needs its own ground. */
+/* The mobile dropdown opens inside the header, so it sits on the same wash. */
 @media (max-width: 1060px) {
-  /* The dropdown sits on the solid header, so it keeps the normal palette. */
-  body.header-over.nav-open .nav a { color: #3c4a3b; border-bottom-color: var(--line-soft); }
-  body.header-over.nav-open .nav a:hover { color: var(--green); }
+  .site-header .nav { border-top-color: rgba(251,250,245,.22); }
+  .site-header .nav a { border-bottom-color: rgba(251,250,245,.16); }
 }
