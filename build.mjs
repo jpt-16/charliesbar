@@ -164,6 +164,24 @@ ${g.photos.map((ph) => `        <button type="button" class="shot" data-full="/a
     </section>`).join('\n    ');
 }
 
+function renderReviews(data) {
+  const cards = data.reviews.map((r, i) => `        <figure class="review" role="group" aria-roledescription="review" aria-label="Review ${i + 1} of ${data.reviews.length}">
+          <div class="stars" aria-hidden="true">${'\u2605'.repeat(r.stars)}${'\u2606'.repeat(5 - r.stars)}</div>
+          <p class="sr-only">${r.stars} out of 5 stars</p>
+          <blockquote>\u201c${esc(r.text)}\u201d</blockquote>
+          <cite>${esc(r.name)} \u2014 ${esc(data.source)} review</cite>
+        </figure>`).join('\n');
+
+  return `<div class="carousel" data-carousel>
+      <div class="carousel-track" tabindex="0" role="region" aria-label="Customer reviews">
+${cards}
+      </div>
+      <button class="carousel-btn carousel-prev" type="button" aria-label="Previous reviews">&lsaquo;</button>
+      <button class="carousel-btn carousel-next" type="button" aria-label="Next reviews">&rsaquo;</button>
+      <p class="carousel-status" aria-live="polite"></p>
+    </div>`;
+}
+
 /* ------------------------------------------------------------------- render */
 
 async function main() {
@@ -177,6 +195,8 @@ async function main() {
   }
 
   const blocks = {
+    REVIEWS: renderReviews(data.reviews),
+    REVIEWS_RATING: `<strong>${esc(data.reviews.rating)}</strong> on ${esc(data.reviews.source)} across ${esc(data.reviews.count)} reviews`,
     GALLERY: renderGallery(data.gallery),
     FOOD: renderFood(data.food),
     FOOD_NAV: renderFoodNav(data.food),

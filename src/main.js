@@ -275,3 +275,71 @@
     stops[(next + stops.length) % stops.length].focus();
   });
 })();
+
+/* Reviews carousel. The track is a native scroll-snap region — it already
+   swipes and takes keyboard scrolling on its own; the arrows page it along and
+   the status line tells you where you are. */
+(function () {
+  'use strict';
+
+  document.querySelectorAll('[data-carousel]').forEach(function (root) {
+    var track = root.querySelector('.carousel-track');
+    var prev = root.querySelector('.carousel-prev');
+    var next = root.querySelector('.carousel-next');
+    var status = root.querySelector('.carousel-status');
+    var cards = Array.prototype.slice.call(track.children);
+    if (!cards.length) return;
+
+    function step() {
+      /* one card plus its gap */
+      var a = cards[0].getBoundingClientRect();
+      var b = cards[1] ? cards[1].getBoundingClientRect() : null;
+      return b ? b.left - a.left : a.width;
+    }
+
+    function perView() {
+      return Math.max(1, Math.round(track.clientWidth / step()));
+    }
+
+    function update() {
+      var max = track.scrollWidth - track.clientWidth;
+      var atStart = track.scrollLeft <= 1;
+      var atEnd = track.scrollLeft >= max - 1;
+      prev.disabled = atStart;
+      next.disabled = atEnd;
+
+      var n = perView();
+      var first = Math.round(track.scrollLeft / step()) + 1;
+      var last = Math.min(cards.length, first + n - 1);
+      if (status) {
+        status.textContent = cards.length <= n
+          ? ''
+          : (n === 1 ? 'Review ' + first : 'Reviews ' + first + '–' + last) + ' of ' + cards.length;
+      }
+    }
+
+    function page(dir) {
+      track.scrollBy({ left: dir * step() * perView(), behavior: 'smooth' });
+    }
+
+    /* Snap containers can restore a stray offset before we get here. */
+    track.scrollLeft = 0;
+
+    prev.addEventListener('click', function () { page(-1); });
+    next.addEventListener('click', function () { page(1); });
+
+    var tick;
+    track.addEventListener('scroll', function () {
+      window.clearTimeout(tick);
+      tick = window.setTimeout(update, 90);
+    });
+    window.addEventListener('resize', update);
+
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); page(1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); page(-1); }
+    });
+
+    update();
+  });
+})();

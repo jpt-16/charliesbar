@@ -389,12 +389,89 @@ footer :focus-visible {
 .reviews-head h2 { margin: 0; font-size: clamp(28px, 4vw, 38px); }
 .reviews-head .meta { font-size: 16px; color: var(--ink-faint); }
 
-.reviews {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* ----------------------------------------------------------- reviews carousel
+   A scroll-snap track: swipes natively on touch, scrolls with the keyboard,
+   and the arrows just page it along. No layout thrash, no JS positioning. */
+
+.carousel { position: relative; }
+
+/* Flex, not grid: a percentage flex-basis resolves against the container's
+   inner width, where grid-auto-columns percentages inside a scroll container
+   do not — they came out 281px against a 1128px track and made the browser
+   snap-scroll on load. */
+.carousel-track {
+  display: flex;
   gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 4px;
 }
-@media (max-width: 900px) { .reviews { grid-template-columns: 1fr; } }
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track > * {
+  flex: 0 0 calc((100% - 44px) / 3);
+  scroll-snap-align: start;
+}
+.carousel-track:focus-visible { outline: 2px solid var(--green-mid); outline-offset: 6px; }
+
+@media (max-width: 1000px) { .carousel-track > * { flex-basis: calc((100% - 22px) / 2); } }
+@media (max-width: 700px)  { .carousel-track > * { flex-basis: 100%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { scroll-behavior: auto; }
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line-rule);
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--green);
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, border-color .2s ease, opacity .2s ease;
+  z-index: 2;
+}
+.carousel-btn:hover { background: var(--green-mid); border-color: var(--green-mid); color: var(--cream); }
+.carousel-btn[disabled] { opacity: .3; cursor: default; }
+.carousel-btn[disabled]:hover { background: var(--cream); border-color: var(--line-rule); color: var(--green); }
+.carousel-prev { left: -23px; }
+.carousel-next { right: -23px; }
+
+/* Sit the arrows outside the cards wherever the page gutter can hold them;
+   below that there is no room, so they overlay instead. */
+@media (max-width: 560px) {
+  .carousel-prev { left: 2px; }
+  .carousel-next { right: 2px; }
+  .carousel-btn { width: 40px; height: 40px; font-size: 26px; background: rgba(251,250,245,.92); }
+}
+
+.carousel-status {
+  margin: 20px 0 0;
+  text-align: center;
+  font-size: 15px;
+  color: var(--ink-faint);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 .review {
   background: var(--sand);
@@ -402,6 +479,7 @@ footer :focus-visible {
   padding: 34px;
   display: flex;
   flex-direction: column;
+  margin: 0;   /* figure defaults to 16px 40px, which broke the snap spacing */
   transition: border-color .2s ease, transform .2s ease;
 }
 .review:hover { border-color: var(--green-mid); transform: translateY(-3px); }

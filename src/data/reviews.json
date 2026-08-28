@@ -1,0 +1,29 @@
+{
+  "source": "Google",
+  "rating": "4.6",
+  "count": "2,385",
+  "reviews": [
+    { "stars": 5, "name": "Kingg",
+      "text": "Hands down the best wings in Jersey — probably the whole USA. The staff is great, the drinks are cold. And if you like soup, try the she‑crab. Amazing." },
+    { "stars": 5, "name": "Kenny Ketchum",
+      "text": "We've been going to Charlie's for as long as I can remember, and it's one of the most consistent places you'll find. From the atmosphere to the staff to the ownership, it's one of those places that always feels right." },
+    { "stars": 5, "name": "Shannon",
+      "text": "The wings are top notch — I love the tailgun sauce. The Old Bay fries are a favourite, and the cheesesteaks are by far our favourite in the county. Their trivia nights are super fun as well." },
+    { "stars": 5, "name": "Joshua Mankin",
+      "text": "Best wings in NJ. Went for lunch and came back to get more wings for dinner. Now we can't wait to return. Service was incredible and everything was a great price." },
+    { "stars": 5, "name": "Sean Simmons",
+      "text": "I am addicted to the potato skins and the Southwest BBQ wings. Best sauce anywhere. The skins are loaded, not just on top. Our seventh visit this summer." },
+    { "stars": 5, "name": "Avery Heaney",
+      "text": "Best Philly cheesesteak I ever had — and South Jersey and Philadelphia are well known for cheesesteaks. Very good Yuengling on tap, and a very friendly staff." },
+    { "stars": 5, "name": "Sozzer Ball",
+      "text": "Outstanding wings. Try a side of the Top Gun sauce — deep pepper taste with oil for a lingering kick. Must have: the crab mac and cheese. Charlie's is a local institution, great vibe." },
+    { "stars": 5, "name": "Christina McManis",
+      "text": "This place never fails me. Not from the area and came back for a fourth time. Service was phenomenal, food was amazing. Prices are fair and worth the trip." },
+    { "stars": 5, "name": "Mandy Holt",
+      "text": "What an amazing experience. The food was delicious and reasonably priced and the staff were so engaging and friendly. They welcomed us and even gave us free baseball caps. It's a must visit." },
+    { "stars": 4, "name": "Verified Viewz",
+      "text": "Hands down one of the best spots in Somers Point. The atmosphere is always welcoming, the staff is incredibly friendly, and the food is consistently great. Whether you're grabbing a bite, enjoying a drink, or watching the big game, this is the place to be." },
+    { "stars": 4, "name": "Sir Eats-a-lot",
+      "text": "Came to Charlie's for their famous buffalo wings on a Sunday afternoon. We ordered the thirty buffalo wing and a combo wing with boneless tenders and fries. Ice cold draught beer, which is a must. Our server was great." }
+  ]
+}
