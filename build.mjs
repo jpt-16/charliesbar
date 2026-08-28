@@ -235,6 +235,14 @@ async function main() {
       content = content.replaceAll(`{{${key}}}`, html);
     }
 
+    /* A page head can carry a photograph behind the standard green wash. */
+    if (meta.headPhoto) {
+      content = content.replace(
+        '<section class="page-head">',
+        `<section class="page-head page-head--photo" style="--head-photo:url('${esc(meta.headPhoto)}')">`
+      );
+    }
+
     const leftover = content.match(/\{\{[A-Z_]+\}\}/);
     if (leftover) throw new Error(`${file}: unresolved placeholder ${leftover[0]}`);
 

@@ -1494,3 +1494,34 @@ footer :focus-visible {
   .site-header .nav { border-top-color: rgba(251,250,245,.22); }
   .site-header .nav a { border-bottom-color: rgba(251,250,245,.16); }
 }
+
+/* ==================================================== page heads with a photo
+   Same treatment as the home hero so the pages read as one site, but a heavier
+   wash: the page head's smallest text is the eyebrow and the note under the
+   lede, and both sit higher in the frame than anything on the hero. Measured
+   across all seven at 390px and 1280px — .80/.86 passes with the worst at
+   5.4:1, .76/.82 fails on seven of the fourteen. Re-measure before changing
+   the wash or swapping in a different photograph. */
+
+.page-head--photo::before {
+  background:
+    linear-gradient(rgba(34,48,31,.80), rgba(34,48,31,.86)),
+    repeating-linear-gradient(112deg, rgba(38,54,35,.01) 0 16px, rgba(0,0,0,.14) 16px 32px),
+    var(--head-photo) center 55% / cover no-repeat;
+}
+
+/* #9db69b clears AA on flat green but not over a photograph. */
+.page-head--photo .eyebrow,
+.page-head--photo .head-note { color: var(--on-dark-mid); }
+
+/* An outline button on a dark head was dark-green text on dark green — about
+   1.2:1, and invisible. It predates the photographs; axe could not see it
+   because it cannot compute contrast over a background image. */
+.page-head .btn-outline {
+  border-color: rgba(251,250,245,.55);
+  color: var(--cream);
+  /* A fully transparent button over a photograph inherits whatever is behind
+     it, so give the label its own ground. */
+  background: rgba(34, 48, 31, .55);
+}
+.page-head .btn-outline:hover { background: var(--cream); color: var(--green); }
