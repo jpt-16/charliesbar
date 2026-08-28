@@ -1212,8 +1212,11 @@ footer :focus-visible {
 
 .hero--photo { background: var(--green-deep); }
 .hero--photo::before {
+  /* Lightened from .82/.88 so the building reads. Measured: the hero paragraph
+     sits at 4.86:1 against the darkest pixel behind it, clear of the 4.5:1 AA
+     floor. Don't lighten further without re-measuring. */
   background:
-    linear-gradient(rgba(34,48,31,.82), rgba(34,48,31,.88)),
+    linear-gradient(rgba(34,48,31,.70), rgba(34,48,31,.78)),
     repeating-linear-gradient(112deg, rgba(38,54,35,.01) 0 16px, rgba(0,0,0,.14) 16px 32px),
     url("/assets/photos/site/exterior.jpg") center/cover no-repeat;
 }
