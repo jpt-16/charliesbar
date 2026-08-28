@@ -197,17 +197,47 @@ footer :focus-visible {
   .site-header .header-cta { order: 3; }
 }
 
+/* Three lines rather than the word "Menu", which on a restaurant site reads as
+   a link to the food menus. */
 .nav-toggle {
   display: none;
+  position: relative;
+  width: 46px;
+  height: 44px;
+  padding: 0;
   background: none;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 10px 14px;
-  font-family: var(--serif);
-  font-size: 15px;
-  color: var(--green);
   cursor: pointer;
 }
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  position: absolute;
+  height: 2px;
+  background: var(--green);
+  transition: transform .22s ease, background-color .12s ease, top .22s ease;
+}
+.nav-toggle-bars {
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  margin-top: -1px;
+  transform: translateX(-50%);
+}
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  content: "";
+  left: 0;
+  width: 100%;
+}
+.nav-toggle-bars::before { top: -7px; }
+.nav-toggle-bars::after  { top: 7px; }
+
+/* Open: the outer two bars cross, the middle one goes. */
+body.nav-open .nav-toggle-bars { background: transparent; }
+body.nav-open .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+body.nav-open .nav-toggle-bars::after  { top: 0; transform: rotate(-45deg); }
 
 @media (max-width: 1060px) {
   .site-header { flex-wrap: wrap; }

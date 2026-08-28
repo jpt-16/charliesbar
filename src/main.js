@@ -11,7 +11,8 @@
     var setOpen = function (open) {
       nav.setAttribute('data-open', String(open));
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.textContent = open ? 'Close' : 'Menu';
+      /* The button shows an icon, so its name lives in aria-label. */
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
       /* An open menu needs a solid header behind it, not the hero photo. */
       document.body.classList.toggle('nav-open', open);
     };
