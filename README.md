@@ -122,19 +122,29 @@ historical shots.
 The three review quotes are real Google reviews, quoted with the reviewer's
 display name and attributed as such.
 
-## The header photograph
+## Light and dark balance
 
-The masthead bar carries the exterior shot instead of flat cream, cropped to
-`center 88%` — higher up the frame puts the building's own neon "Charlie's"
-sign directly behind the wordmark, which reads as two logos fighting.
+Measured rather than guessed, by sampling rendered pages for pixels below 0.18
+luminance:
 
-The dark wash over it is what keeps the nav legible. Measured worst-case
-contrast is 11:1 at desktop, 8.2:1 at 390px, and 6.9:1 with the mobile menu
-open (which exposes much more of the photograph). Re-measure if you change the
-wash or the crop.
+| Page | before | after |
+|---|---|---|
+| Home | 8.6% | 7.8% |
+| Menus | 10.5% | 8.7% |
+| Spirits | 18.9% | 15.6% |
+| About | 29.1% | 24.7% |
+| Contact | **53.3%** | **45.9%** |
+| Gallery | 35.4% | 34.9% |
 
-To revert to the plain cream bar, delete the `header photograph` block at the
-end of `src/styles.css`.
+The long pages were never the problem — they are mostly menu content on cream.
+Short pages were, because fixed chrome dominates when there is little content:
+Contact carried 919px of utility bar, header, page head and footer against
+769px of form.
+
+So the fix was the chrome, not the palette. The header went back to cream, and
+the page head, hero and footer were each tightened. Green now punctuates — the
+hero, the two "Cheers." bands, the page heads and the footer — rather than
+being the default surface.
 
 ## Page head photographs
 
