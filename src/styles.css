@@ -736,6 +736,10 @@ footer :focus-visible {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 16px;
 }
+/* Two up on a phone — one 350px photo per row made the page 16,000px long. */
+@media (max-width: 620px) {
+  .lightbox-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
 
 .centered-note {
   margin: 32px 0 0;

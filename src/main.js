@@ -135,7 +135,11 @@
         entry.target.classList.add('is-revealed');
         io.unobserve(entry.target);
       });
-    }, { threshold: 0.06 });
+      /* A percentage threshold is unreachable when the element is taller than
+         the viewport — 6% of a 16,000px gallery is 960px, more than a phone
+         screen shows at once, so the section never revealed. Trigger on the
+         element's edge instead, which holds at any height. */
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
 
     targets.forEach(function (el) {
       el.classList.add('is-revealing');
