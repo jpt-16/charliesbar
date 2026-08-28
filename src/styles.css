@@ -1483,6 +1483,15 @@ footer :focus-visible {
 }
 .site-header .btn-solid:hover { background: transparent; color: var(--cream); }
 
+/* Opening the menu expands the header, which reveals the whole photograph
+   rather than the slice the collapsed bar shows. Deepen the wash so it stays a
+   texture behind the links instead of becoming a picture competing with them. */
+body.nav-open .site-header {
+  background:
+    linear-gradient(rgba(34,48,31,.93), rgba(34,48,31,.955)),
+    url("/assets/photos/site/exterior.jpg") center 88% / cover no-repeat;
+}
+
 /* The mobile dropdown opens inside the header, so it sits on the same wash. */
 @media (max-width: 1060px) {
   .site-header .nav { border-top-color: rgba(251,250,245,.22); }
