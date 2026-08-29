@@ -23,7 +23,7 @@ const NAV = [
 
 const UTILITY = [
   ['/', 'Home'],
-  ['/about', 'About'],
+  ['/about', 'History'],
   ['/employment', 'Employment'],
   ['/contact', 'Contact']
 ];
